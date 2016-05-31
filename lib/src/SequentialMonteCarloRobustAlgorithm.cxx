@@ -35,6 +35,11 @@ using namespace OT;
 namespace OTROBOPT
 {
 
+
+TEMPLATE_CLASSNAMEINIT(PersistentCollection<OptimizationResult>);
+
+static const Factory<PersistentCollection<OptimizationResult> > RegisteredFactory_PC_OR;
+
 CLASSNAMEINIT(SequentialMonteCarloRobustAlgorithm);
 
 static Factory<SequentialMonteCarloRobustAlgorithm> Factory_SequentialMonteCarloRobustAlgorithm;
@@ -45,16 +50,18 @@ SequentialMonteCarloRobustAlgorithm::SequentialMonteCarloRobustAlgorithm()
   : RobustOptimizationAlgorithm()
   , initialSamplingSize_(ResourceMap::GetAsUnsignedInteger("SequentialMonteCarloRobustAlgorithm-DefaultInitialSamplingSize"))
   , initialSearch_(0)
+  , resultCollection_(0)
 {
   // Nothing to do
 }
 
 /* Parameter constructor */
 SequentialMonteCarloRobustAlgorithm::SequentialMonteCarloRobustAlgorithm (const RobustOptimizationProblem & problem,
-                                                                          const OptimizationSolver & solver)
+    const OptimizationSolver & solver)
   : RobustOptimizationAlgorithm(problem, solver)
   , initialSamplingSize_(ResourceMap::GetAsUnsignedInteger("SequentialMonteCarloRobustAlgorithm-DefaultInitialSamplingSize"))
   , initialSearch_(0)
+  , resultCollection_(0)
 {
   // Nothing to do
 }
@@ -148,7 +155,7 @@ void SequentialMonteCarloRobustAlgorithm::run()
         OptimizationResult result(solver.getResult());
         NumericalScalar currentValue0 = result.getOptimalValue()[0];
         if ((getProblem().isMinimization() && (currentValue0 < bestValue))
-        || (!getProblem().isMinimization() && (currentValue0 > bestValue)))
+            || (!getProblem().isMinimization() && (currentValue0 > bestValue)))
         {
           bestValue = currentValue0;
           newPoint = result.getOptimalPoint();
@@ -166,6 +173,7 @@ void SequentialMonteCarloRobustAlgorithm::run()
       solver.setStartingPoint(currentPoint);
       solver.run();
       OptimizationResult result(solver.getResult());
+      resultCollection_.add(result);
       newPoint = result.getOptimalPoint();
       newValue = result.getOptimalValue();
     }
@@ -184,10 +192,11 @@ void SequentialMonteCarloRobustAlgorithm::run()
 
     ++ iterationNumber;
   }
+  resultCollection_.add(result_);
 }
 
 /* Initial sampling size accessor */
-void SequentialMonteCarloRobustAlgorithm::setInitialSamplingSize(const OT::UnsignedInteger N0)
+void SequentialMonteCarloRobustAlgorithm::setInitialSamplingSize(const UnsignedInteger N0)
 {
   initialSamplingSize_ = N0;
 }
@@ -197,7 +206,7 @@ UnsignedInteger SequentialMonteCarloRobustAlgorithm::getInitialSamplingSize() co
   return initialSamplingSize_;
 }
 
-void SequentialMonteCarloRobustAlgorithm::setInitialSearch(const OT::UnsignedInteger initialSearch)
+void SequentialMonteCarloRobustAlgorithm::setInitialSearch(const UnsignedInteger initialSearch)
 {
   initialSearch_ = initialSearch;
 }
@@ -207,13 +216,19 @@ UnsignedInteger SequentialMonteCarloRobustAlgorithm::getInitialSearch() const
   return initialSearch_;
 }
 
+ResultCollection SequentialMonteCarloRobustAlgorithm::getResultCollection() const
+{
+  return resultCollection_;
+}
+
 /* String converter */
 String SequentialMonteCarloRobustAlgorithm::__repr__() const
 {
   OSS oss;
   oss << "class=" << SequentialMonteCarloRobustAlgorithm::GetClassName()
-      << " initialSamplingSize=" << initialSamplingSize_
-      << " initialSearch=" << initialSearch_;
+      << ", initialSamplingSize=" << initialSamplingSize_
+      << ", initialSearch_=" << initialSearch_
+      << ", resultCollection=" << resultCollection_;
   return oss;
 }
 
@@ -223,6 +238,7 @@ void SequentialMonteCarloRobustAlgorithm::save(Advocate & adv) const
   RobustOptimizationAlgorithm::save(adv);
   adv.saveAttribute("initialSamplingSize_", initialSamplingSize_);
   adv.saveAttribute("initialSearch_", initialSearch_);
+  adv.saveAttribute("resultCollection_", resultCollection_);
 }
 
 /* Method load() reloads the object from the StorageManager */
@@ -231,7 +247,9 @@ void SequentialMonteCarloRobustAlgorithm::load(Advocate & adv)
   RobustOptimizationAlgorithm::load(adv);
   adv.loadAttribute("initialSamplingSize_", initialSamplingSize_);
   adv.loadAttribute("initialSearch_", initialSearch_);
+  adv.loadAttribute("resultCollection_", resultCollection_);
 }
 
 
 } /* namespace OTROBOPT */
+

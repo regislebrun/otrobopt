@@ -22,6 +22,8 @@
 #define OTROBOPT_SEQUENTIALMONTECARLOROBUSTALGORITHM_HXX
 
 #include "otrobopt/RobustOptimizationAlgorithm.hxx"
+#include <openturns/Collection.hxx>
+#include <openturns/PersistentCollection.hxx>
 
 namespace OTROBOPT
 {
@@ -37,6 +39,10 @@ class OTROBOPT_API SequentialMonteCarloRobustAlgorithm
   CLASSNAME;
 
 public:
+
+  typedef OT::Collection<OT::OptimizationResult>           ResultCollection;
+  typedef OT::PersistentCollection<OT::OptimizationResult> ResultPersistentCollection;
+
   /** Default constructor */
   SequentialMonteCarloRobustAlgorithm();
 
@@ -57,6 +63,9 @@ public:
   void setInitialSearch(const OT::UnsignedInteger initialSearch);
   OT::UnsignedInteger getInitialSearch() const;
 
+  /** Intermediate optimization results accessor */
+  ResultCollection getResultCollection() const;
+
   /** String converter */
   OT::String __repr__() const;
 
@@ -72,6 +81,9 @@ private:
 
   // number of sampled initial points
   OT::UnsignedInteger initialSearch_;
+
+  // Full path of results
+  ResultPersistentCollection resultCollection_;
 
 }; /* class SequentialMonteCarloRobustAlgorithm */
 
