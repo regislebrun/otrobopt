@@ -64,3 +64,39 @@ Returns
 -------
 initialSearch : int, 0 by default (no multi-start)
     Multi-start number"
+
+// ---------------------------------------------------------------------
+
+%feature("docstring") OTROBOPT::SequentialMonteCarloRobustAlgorithm::getInitialStartingPoints
+"Multi-start points accessor.
+
+Start points used for the initial search of a global optimum.
+
+Returns
+-------
+initialStartingPoints : :class:`~openturns.NumericalSample`
+    Start points used for the initial search of a global optimum."
+
+// ---------------------------------------------------------------------
+
+%feature("docstring") OTROBOPT::SequentialMonteCarloRobustAlgorithm::getInitialResultCollection
+"Initial optimization results accessor.
+
+Collection of :class:`~openturns.OptimizationResult` obtained during the initial searc of a global optimum.
+
+Returns
+-------
+initialResultCollection : :class:`~openturns.OptimizationResultCollection`
+    Initial optimization results accessor"
+
+// ---------------------------------------------------------------------
+
+%feature("docstring") OTROBOPT::SequentialMonteCarloRobustAlgorithm::getResultCollection
+"Optimization results accessor.
+
+Collection of :class:`~openturns.OptimizationResult` obtained during the resolution of the sequential discretization of the robust problem.
+
+Returns
+-------
+resultCollection : :class:`~openturns.OptimizationResultCollection`
+    It gives the convergence path of the sequential algorithm"

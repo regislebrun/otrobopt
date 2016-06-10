@@ -32,13 +32,15 @@
 
 using namespace OT;
 
+namespace OT
+{
+  TEMPLATE_CLASSNAMEINIT(PersistentCollection<OptimizationResult>);
+}
+
+static Factory< PersistentCollection<OptimizationResult> > Factory_OptimizationResultPersistentCollection;
+
 namespace OTROBOPT
 {
-
-
-TEMPLATE_CLASSNAMEINIT(PersistentCollection<OptimizationResult>);
-
-static const Factory<PersistentCollection<OptimizationResult> > RegisteredFactory_PC_OR;
 
 CLASSNAMEINIT(SequentialMonteCarloRobustAlgorithm);
 
@@ -51,6 +53,8 @@ SequentialMonteCarloRobustAlgorithm::SequentialMonteCarloRobustAlgorithm()
   , initialSamplingSize_(ResourceMap::GetAsUnsignedInteger("SequentialMonteCarloRobustAlgorithm-DefaultInitialSamplingSize"))
   , initialSearch_(0)
   , resultCollection_(0)
+  , initialStartingPoints_(0, 0)
+  , initialResultCollection_(0)
 {
   // Nothing to do
 }
@@ -62,6 +66,8 @@ SequentialMonteCarloRobustAlgorithm::SequentialMonteCarloRobustAlgorithm (const 
   , initialSamplingSize_(ResourceMap::GetAsUnsignedInteger("SequentialMonteCarloRobustAlgorithm-DefaultInitialSamplingSize"))
   , initialSearch_(0)
   , resultCollection_(0)
+  , initialStartingPoints_(0, problem.getDimension())
+  , initialResultCollection_(0)
 {
   // Nothing to do
 }
@@ -206,6 +212,7 @@ UnsignedInteger SequentialMonteCarloRobustAlgorithm::getInitialSamplingSize() co
   return initialSamplingSize_;
 }
 
+/* Number of initial starting points accessors */
 void SequentialMonteCarloRobustAlgorithm::setInitialSearch(const UnsignedInteger initialSearch)
 {
   initialSearch_ = initialSearch;
@@ -216,9 +223,22 @@ UnsignedInteger SequentialMonteCarloRobustAlgorithm::getInitialSearch() const
   return initialSearch_;
 }
 
-ResultCollection SequentialMonteCarloRobustAlgorithm::getResultCollection() const
+/* Optimization path accessor */
+SequentialMonteCarloRobustAlgorithm::OptimizationResultCollection SequentialMonteCarloRobustAlgorithm::getResultCollection() const
 {
   return resultCollection_;
+}
+
+/* Initial starting points accessor */
+NumericalSample SequentialMonteCarloRobustAlgorithm::getInitialStartingPoints() const
+{
+  return initialStartingPoints_;
+}
+
+/* Initial results accessor */
+SequentialMonteCarloRobustAlgorithm::OptimizationResultCollection SequentialMonteCarloRobustAlgorithm::getInitialResultCollection() const
+{
+  return initialResultCollection_;
 }
 
 /* String converter */
@@ -228,7 +248,9 @@ String SequentialMonteCarloRobustAlgorithm::__repr__() const
   oss << "class=" << SequentialMonteCarloRobustAlgorithm::GetClassName()
       << ", initialSamplingSize=" << initialSamplingSize_
       << ", initialSearch_=" << initialSearch_
-      << ", resultCollection=" << resultCollection_;
+      << ", resultCollection=" << resultCollection_
+      << ", initialStartingPoints=" << initialStartingPoints_
+      << ", initialResultCollection=" << initialResultCollection_;
   return oss;
 }
 
@@ -239,6 +261,8 @@ void SequentialMonteCarloRobustAlgorithm::save(Advocate & adv) const
   adv.saveAttribute("initialSamplingSize_", initialSamplingSize_);
   adv.saveAttribute("initialSearch_", initialSearch_);
   adv.saveAttribute("resultCollection_", resultCollection_);
+  adv.saveAttribute("initialStartingPoints_", initialStartingPoints_);
+  adv.saveAttribute("initialResultCollection_", initialResultCollection_);
 }
 
 /* Method load() reloads the object from the StorageManager */
@@ -248,6 +272,8 @@ void SequentialMonteCarloRobustAlgorithm::load(Advocate & adv)
   adv.loadAttribute("initialSamplingSize_", initialSamplingSize_);
   adv.loadAttribute("initialSearch_", initialSearch_);
   adv.loadAttribute("resultCollection_", resultCollection_);
+  adv.loadAttribute("initialStartingPoints_", initialStartingPoints_);
+  adv.loadAttribute("initialResultCollection_", initialResultCollection_);
 }
 
 

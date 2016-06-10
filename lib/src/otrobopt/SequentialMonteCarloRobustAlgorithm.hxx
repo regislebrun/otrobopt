@@ -22,6 +22,7 @@
 #define OTROBOPT_SEQUENTIALMONTECARLOROBUSTALGORITHM_HXX
 
 #include "otrobopt/RobustOptimizationAlgorithm.hxx"
+#include <openturns/OT.hxx>
 #include <openturns/Collection.hxx>
 #include <openturns/PersistentCollection.hxx>
 
@@ -38,10 +39,11 @@ class OTROBOPT_API SequentialMonteCarloRobustAlgorithm
 {
   CLASSNAME;
 
+
 public:
 
-  typedef OT::Collection<OT::OptimizationResult>           ResultCollection;
-  typedef OT::PersistentCollection<OT::OptimizationResult> ResultPersistentCollection;
+  typedef OT::Collection<OT::OptimizationResult>           OptimizationResultCollection;
+  typedef OT::PersistentCollection<OT::OptimizationResult> OptimizationResultPersistentCollection;
 
   /** Default constructor */
   SequentialMonteCarloRobustAlgorithm();
@@ -63,8 +65,14 @@ public:
   void setInitialSearch(const OT::UnsignedInteger initialSearch);
   OT::UnsignedInteger getInitialSearch() const;
 
+  /** Initial starting points accessor */
+  OT::NumericalSample getInitialStartingPoints() const;
+
+  /** Initial optimization results accessor */
+  OptimizationResultCollection getInitialResultCollection() const;
+
   /** Intermediate optimization results accessor */
-  ResultCollection getResultCollection() const;
+  OptimizationResultCollection getResultCollection() const;
 
   /** String converter */
   OT::String __repr__() const;
@@ -83,7 +91,13 @@ private:
   OT::UnsignedInteger initialSearch_;
 
   // Full path of results
-  ResultPersistentCollection resultCollection_;
+  OptimizationResultPersistentCollection resultCollection_;
+
+  // Initial starting points
+  OT::NumericalSample initialStartingPoints_;
+
+  // Initial problem results
+  OptimizationResultPersistentCollection initialResultCollection_;
 
 }; /* class SequentialMonteCarloRobustAlgorithm */
 
