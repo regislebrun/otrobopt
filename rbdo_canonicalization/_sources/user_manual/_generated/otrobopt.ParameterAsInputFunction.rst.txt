@@ -1,0 +1,12 @@
+﻿ParameterAsInputFunction
+=================================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: ParameterAsInputFunction
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+
