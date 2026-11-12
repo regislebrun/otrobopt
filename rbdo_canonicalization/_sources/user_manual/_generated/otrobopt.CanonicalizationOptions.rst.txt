@@ -1,0 +1,12 @@
+﻿CanonicalizationOptions
+================================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: CanonicalizationOptions
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+
