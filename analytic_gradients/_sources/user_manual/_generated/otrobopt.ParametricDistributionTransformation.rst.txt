@@ -1,0 +1,12 @@
+﻿ParametricDistributionTransformation
+=============================================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: ParametricDistributionTransformation
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+
