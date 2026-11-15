@@ -56,9 +56,12 @@ this formulation; the parameter-dependent case is discussed at the end.
 The inner reliability problem is written in the standard space
 :math:`\Xi`.  Let :math:`T` map :math:`\Xi` to :math:`\cD`, and let
 :math:`G(x;\xi)=g(x;T(\xi))`.  The safe event is
-:math:`\{G(x;\Xi) \ge 0\}` and the target reliability index is
-:math:`\beta_t=\Phi^{-1}(\alpha)`.  For a scalar limit state, the design point
-is the closest point of the limit-state surface to the origin,
+:math:`\{G(x;\Xi) \ge 0\}`.  The standard space is the one associated with
+:math:`\cD` by its isoprobabilistic transformation: the standard normal
+space when the standard distribution of :math:`\cD` is the normal law, and
+otherwise the same-kind standard space described below.  For a scalar limit
+state, the design point is the closest point of the limit-state surface to
+the origin,
 
 .. math::
 
@@ -68,6 +71,131 @@ and the signed reliability index is
 :math:`\beta(x)=\operatorname{sign}(G(x;0))\,\norm{u^\star(x)}`.  This
 formulation is the common language of the double-loop, SORA and single-loop
 methods; they differ in how they solve or avoid the inner problem.
+
+Standard space and generalized reliability index
+------------------------------------------------
+
+.. warning::
+
+    Most FORM and SORM publications assume that the standard space is the
+    standard normal space; this is the setting of the Hasofer--Lind index
+    [Hasofer1974]_, [Rackwitz1978]_, [Ditlevsen1996]_ and of the usual
+    reliability tables.  OpenTURNS does not always use that space: for an
+    elliptical distribution it uses the same-kind standard space described
+    below.  The reliability indices used in this page are distances in the
+    standard space of the distribution, and they are not interchangeable
+    with normal-space values published elsewhere.  Their probabilistic
+    meaning is always given by the standard marginal, as in
+    equation :eq:`eq:form-probability`.
+
+The standard normal space is obtained whenever the isoprobabilistic
+transformation is built from the marginal distributions and the Rosenblatt
+transformation, which is what OpenTURNS does for every non-elliptical
+distribution.  It does not hold for elliptical distributions: their
+canonical standard space is the same-kind spherical space obtained by the
+generalized Nataf transformation [Lebrun2009b]_.  For
+:math:`\Theta \sim \mathrm{Student}(\nu,\mu,\sigma,R)`, for instance, the
+transformation is the affine map :math:`\theta = \mu + \sigma L u` with
+:math:`L L^\top = R`, and :math:`U \sim \mathrm{Student}(\nu,0,I)`, whose
+density depends on :math:`\norm{u}` only.  A standard normal space can still
+be reached through a Rosenblatt map, but that map depends on the ordering of
+the components, and the image of the design point is no longer the most
+probable failure point of the original model.
+
+Both spaces are isoprobabilistic, so they assign the same exact probability
+to every event.  They differ in the geometry that FORM and SORM use.  In the
+same-kind space the level sets of the standard density are spheres, so the
+most probable failure point is the actual mode of the failure domain on the
+limit-state surface, and the distance to the origin is invariant by a change
+of variable ordering.  In a Rosenblatt normal space those two properties are
+lost, and the FORM approximation changes with the arbitrary order in which
+the components are transformed.  This is why the specialized algorithms use
+the standard space returned by
+:meth:`~openturns.Distribution.getStandardDistribution` through the
+isoprobabilistic transformation, and convert probabilities with the marginal
+of that standard distribution, obtained as
+:meth:`~openturns.Distribution.getStandardDistribution` followed by
+:meth:`~openturns.Distribution.getMarginal`.
+
+In a spherically symmetric standard space, the projection of :math:`U` on any
+unit direction has the distribution of a marginal.  Hence, for any unit
+vector :math:`a`,
+
+.. math::
+
+    \Prob{a^\top U \ge \beta} = 1 - F_{\mathrm{std}}(\beta)
+                             = F_{\mathrm{std}}(-\beta),
+
+where :math:`F_{\mathrm{std}}` is any one-dimensional marginal of the
+standard distribution, and the FORM approximation of the failure probability
+is
+
+.. math::
+    :label: eq:form-probability
+
+    p_f \approx F_{\mathrm{std}}(-\beta), \qquad
+    p_s \approx F_{\mathrm{std}}(\beta).
+
+The target index associated with a safe probability :math:`p_s` is therefore
+
+.. math::
+
+    \beta_t = F_{\mathrm{std}}^{-1}(p_s).
+
+For a normal standard space :math:`F_{\mathrm{std}}=\Phi`, and these are the
+classical formulas :math:`\beta_t=\Phi^{-1}(p_s)` and
+:math:`p_f \approx \Phi(-\beta)`.  For a Student standard space
+:math:`F_{\mathrm{std}}=S_\nu`, and :math:`p_f \approx S_\nu(-\beta)`; since
+:math:`S_\nu` has heavier tails than :math:`\Phi`, the same index corresponds
+to a larger failure probability.  The index :math:`\beta` is the generalized
+reliability index: it remains the distance to the origin in the standard
+space, but it is no longer :math:`\Phi^{-1}(p_f)`.
+
+The correspondence between the classical normal-space formulas and their
+generalized counterparts is summarized below.
+
+.. list-table::
+    :header-rows: 1
+
+    * - Quantity
+      - Normal standard space
+      - Same-kind standard space
+    * - Transform
+      - affine or Rosenblatt map to :math:`\cN(0,I)`
+      - generalized Nataf map to :math:`U`
+    * - Target index
+      - :math:`\beta_t=\Phi^{-1}(p_s)`
+      - :math:`\beta_t=F_{\mathrm{std}}^{-1}(p_s)`
+    * - Failure probability
+      - :math:`p_f\approx\Phi(-\beta)`
+      - :math:`p_f\approx F_{\mathrm{std}}(-\beta)`
+    * - Classical index of :math:`p_f`
+      - :math:`\Phi^{-1}(p_f)=\beta`
+      - :math:`\Phi^{-1}(p_f)=\Phi^{-1}\bigl(F_{\mathrm{std}}(-\beta)\bigr)`
+
+For :math:`p_s=0.9` and a Student standard space with :math:`\nu=8`, the
+target index is :math:`S_8^{-1}(0.9)=1.3968`, whereas the normal-space
+formula gives :math:`\Phi^{-1}(0.9)=1.2816`.  A design based on the latter
+value would not satisfy the requested probability: its actual FORM
+probability is :math:`S_8(1.2816)=0.882`.  Conversely, reporting
+:math:`\beta=1.3968` as a normal-space index overstates the safety by
+:math:`1.3968-1.2816`.  Always check which standard space a published index
+refers to before comparing it with the values returned by these algorithms.
+
+The specialized algorithms use this convention consistently: the target
+index is the quantile of :math:`F_{\mathrm{std}}`, the inner problem is
+solved in the standard space of the distribution, and
+:meth:`~otrobopt.DoubleLoopRBDOAlgorithm.getApproximateProbability` returns
+:math:`F_{\mathrm{std}}(\beta)`.  The same convention is used by
+:class:`openturns.FORM` and :class:`openturns.SORM`, whose result
+probabilities are based on the standard marginal.  When a normal-space
+reliability index is required for reporting, it is
+:math:`\Phi^{-1}(F_{\mathrm{std}}(\beta))`, not :math:`\beta`.
+
+SORM follows the same construction: the curvature correction is applied in
+the same-kind standard space, and the probability is obtained from the
+standard marginal density and distribution.  The specialized algorithms
+themselves implement the FORM approximation only.
 
 The generic canonicalizer
 -------------------------
@@ -118,8 +246,10 @@ For a ``Greater`` operator the safe event is the intersection
 which is why :math:`s` is not :math:`\min_j \sigma G_j` for a ``Less``
 operator.
 
-Write :math:`\beta_t=\Phi^{-1}(p_s)`.  The double-loop algorithm requires
-:math:`0.5 < p_s < 1` so that :math:`\beta_t` is positive.
+Write :math:`\beta_t=F_{\mathrm{std}}^{-1}(p_s)`, where
+:math:`F_{\mathrm{std}}` is the marginal of the standard distribution defined
+above.  The double-loop algorithm requires :math:`0.5 < p_s < 1` so that
+:math:`\beta_t` is positive.
 
 In the reliability index approach (RIA), the inner problem finds the design
 point
