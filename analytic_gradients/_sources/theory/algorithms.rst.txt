@@ -276,9 +276,14 @@ scalarized limit state on the target sphere,
 
 and the outer constraint is :math:`s(x;u^\star(x)) \ge 0`.  The outer
 constraint reported by the algorithm is the performance measure at that
-point.  Both inner problems are solved with the configured inner solver, by
-default :class:`~openturns.Cobyla`, because the min-scalarization of a vector
-limit state is nonsmooth.
+point.  It requires the origin of the standard space to belong to the safe
+domain: when :math:`s(x;0) < 0` the failure domain contains the centre of
+the target sphere, and no value on the sphere certifies safety.  In that case
+the algorithm reports :math:`\min(s(x;u^\star(x)), s(x;0))`, which is
+negative, so that the outer loop rejects the design.  Both inner problems are
+solved with the configured inner solver, by default
+:class:`~openturns.Cobyla`, because the min-scalarization of a vector limit
+state is nonsmooth.
 
 The joint-chance treatment is explicit.  With
 ``DoubleLoopRBDOAlgorithm.EXACT`` the algorithm uses the single scalarized
