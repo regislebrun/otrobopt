@@ -354,7 +354,11 @@ the selected joint chance treatment.</p>
 <p>The default inner solver tolerances can be changed with the ResourceMap keys
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumIterationNumber</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumConstraintError</span></code> and
-<code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumAbsoluteError</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumAbsoluteError</span></code>.  The
+inner reliability solves record their evaluations to recover the best iterate
+when OpenTURNS reports no optimal point; the ResourceMap key
+<code class="docutils literal notranslate"><span class="pre">RBDOAlgorithmTools-InnerEvaluationHistoryMaximumSize</span></code> bounds the number of
+recorded evaluations.</p>
 <p>The result is available through the inherited <code class="docutils literal notranslate"><span class="pre">getResult</span></code> method.  The
 reliability analysis at the solution is reported by
 <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getReliabilityIndex" title="otrobopt.SORARobustOptimizationAlgorithm.getReliabilityIndex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getReliabilityIndex()</span></code></a>, <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getPerformanceMeasure" title="otrobopt.SORARobustOptimizationAlgorithm.getPerformanceMeasure"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getPerformanceMeasure()</span></code></a>,
