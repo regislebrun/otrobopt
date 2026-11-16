@@ -345,11 +345,12 @@ gradient-based deterministic or inner solver is used.  The default
 <a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Cobyla.html#openturns.Cobyla" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cobyla</span></code></a> solvers do not require it.</p>
 <p>The outer loop uses the inherited controls
 <code class="docutils literal notranslate"><span class="pre">setMaximumIterationNumber</span></code>, <code class="docutils literal notranslate"><span class="pre">setMaximumAbsoluteError</span></code> and
-<code class="docutils literal notranslate"><span class="pre">setMaximumRelativeError</span></code>.  The result status is <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> when both the
-design and the shift converge, <code class="docutils literal notranslate"><span class="pre">INTERRUPTION</span></code> when the stop callback
-interrupts the loop, and <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> when the maximum number of iterations is
-reached first.  The status message reports the selected joint chance
-treatment.</p>
+<code class="docutils literal notranslate"><span class="pre">setMaximumRelativeError</span></code>.  The result status is <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> when the
+design and the shift converge and the final design satisfies the chance
+constraint, <code class="docutils literal notranslate"><span class="pre">INTERRUPTION</span></code> when the stop callback interrupts the loop, and
+<code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> when the maximum number of iterations is reached first or when a
+converged design violates the chance constraint.  The status message reports
+the selected joint chance treatment.</p>
 <p>The default inner solver tolerances can be changed with the ResourceMap keys
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumIterationNumber</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumConstraintError</span></code> and
