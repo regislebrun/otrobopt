@@ -333,7 +333,11 @@ gradient when a gradient-based inner solver is used.  The default
 <p>The default inner solver tolerances can be changed with the ResourceMap keys
 <code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumIterationNumber</span></code>,
 <code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumConstraintError</span></code> and
-<code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumAbsoluteError</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumAbsoluteError</span></code>.  The inner
+reliability solves record their evaluations to recover the best iterate when
+OpenTURNS reports no optimal point; the ResourceMap key
+<code class="docutils literal notranslate"><span class="pre">RBDOAlgorithmTools-InnerEvaluationHistoryMaximumSize</span></code> bounds the number of
+recorded evaluations.</p>
 <p>The result is available through the inherited <code class="docutils literal notranslate"><span class="pre">getResult</span></code> method.  The
 reliability analysis at the solution is reported by
 <a class="reference internal" href="#otrobopt.DoubleLoopRBDOAlgorithm.getReliabilityIndex" title="otrobopt.DoubleLoopRBDOAlgorithm.getReliabilityIndex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getReliabilityIndex()</span></code></a>, <a class="reference internal" href="#otrobopt.DoubleLoopRBDOAlgorithm.getPerformanceMeasure" title="otrobopt.DoubleLoopRBDOAlgorithm.getPerformanceMeasure"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getPerformanceMeasure()</span></code></a>,
