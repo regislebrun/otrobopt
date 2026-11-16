@@ -352,15 +352,17 @@ constraint, <code class="docutils literal notranslate"><span class="pre">INTERRU
 converged design violates the chance constraint.  The status message reports
 the selected joint chance treatment.</p>
 <p>The default inner solver tolerances can be changed with the ResourceMap keys
-<code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumIterationNumber</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumCallsNumber</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumConstraintError</span></code> and
 <code class="docutils literal notranslate"><span class="pre">SORARobustOptimizationAlgorithm-DefaultInnerMaximumAbsoluteError</span></code>.  The
 inner reliability solves record their evaluations to recover the best iterate
 when OpenTURNS reports no optimal point; the ResourceMap key
 <code class="docutils literal notranslate"><span class="pre">RBDOAlgorithmTools-InnerEvaluationHistoryMaximumSize</span></code> bounds the number of
 recorded evaluations.</p>
-<p>The result is available through the inherited <code class="docutils literal notranslate"><span class="pre">getResult</span></code> method.  The
-reliability analysis at the solution is reported by
+<p>The result is available through the inherited <code class="docutils literal notranslate"><span class="pre">getResult</span></code> method.  It is
+associated with the RBDO problem, so that a saved algorithm keeps its result
+across a study round trip.  The reliability analysis at the solution is
+reported by
 <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getReliabilityIndex" title="otrobopt.SORARobustOptimizationAlgorithm.getReliabilityIndex"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getReliabilityIndex()</span></code></a>, <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getPerformanceMeasure" title="otrobopt.SORARobustOptimizationAlgorithm.getPerformanceMeasure"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getPerformanceMeasure()</span></code></a>,
 <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getShift" title="otrobopt.SORARobustOptimizationAlgorithm.getShift"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getShift()</span></code></a>, <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getStandardSpaceDesignPoint" title="otrobopt.SORARobustOptimizationAlgorithm.getStandardSpaceDesignPoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getStandardSpaceDesignPoint()</span></code></a>,
 <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getPhysicalSpaceDesignPoint" title="otrobopt.SORARobustOptimizationAlgorithm.getPhysicalSpaceDesignPoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getPhysicalSpaceDesignPoint()</span></code></a> and <a class="reference internal" href="#otrobopt.SORARobustOptimizationAlgorithm.getApproximateProbability" title="otrobopt.SORARobustOptimizationAlgorithm.getApproximateProbability"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getApproximateProbability()</span></code></a>.</p>

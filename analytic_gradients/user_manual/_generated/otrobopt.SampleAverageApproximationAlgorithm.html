@@ -312,6 +312,9 @@ chance measure with the global random generator.  Set the seed before
 <p>The Wilson interval is a binomial confidence interval for the validation
 estimate.  It quantifies the sampling error of the validation, not the bias
 of the calibration sample or the quality of the deterministic solver.</p>
+<p>The result returned by <code class="docutils literal notranslate"><span class="pre">getResult</span></code> is associated with the RBDO problem
+rather than with the internal empirical problem, so that a saved algorithm
+keeps its result across a study round trip.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">openturns</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">otrobopt</span>
