@@ -161,7 +161,7 @@ Solve the problem with both treatments and report the results.
     Reliability index        : 1.2815444833783096
     Shift norm               : 0.9061919693941414
     Objective evaluations    : 95
-    Limit-state evaluations  : 606
+    Limit-state evaluations  : 607
 
     Treatment                : BONFERRONI
     Optimal design           : [-0.822432,-0.822415]
@@ -169,7 +169,7 @@ Solve the problem with both treatments and report the results.
     Reliability index        : 1.6448465439234443
     Shift norm               : 1.1630753619400884
     Objective evaluations    : 111
-    Limit-state evaluations  : 2425
+    Limit-state evaluations  : 2427
 
 
 
