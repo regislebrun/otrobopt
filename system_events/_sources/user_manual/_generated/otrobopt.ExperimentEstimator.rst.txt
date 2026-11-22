@@ -1,0 +1,12 @@
+﻿ExperimentEstimator
+============================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: ExperimentEstimator
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+

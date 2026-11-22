@@ -1,0 +1,12 @@
+﻿ProbabilityEstimator
+=============================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: ProbabilityEstimator
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+

@@ -1,0 +1,12 @@
+﻿RobustOptimizationProblemCanonicalizer
+===============================================
+
+.. currentmodule:: otrobopt
+
+.. autoclass:: RobustOptimizationProblemCanonicalizer
+   :exclude-members: __call__, thisown
+
+   
+   .. automethod:: __init__
+   
+
