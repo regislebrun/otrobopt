@@ -42,6 +42,10 @@ where :math:`\rho_{\cD_s}` is a robustness measure on the objective and
 law-determined functionals of the random vector :math:`J(x;\Theta)` or
 :math:`G(x;\Theta)`.  The feasible design set :math:`\mathcal{X}` is described
 by bounds, equality constraints and deterministic inequality constraints.
+When the distribution parameter is optimized as well, the minimization and the
+constraints are over :math:`(x,s) \in \mathcal{X} \times \mathcal{S}`; the
+display above is the fixed-parameter formulation, with :math:`\cD_s` held at a
+given :math:`s`.
 
 The canonical problem introduces a fixed reference distribution :math:`\Xi`
 on :math:`\Rset^{n_\xi}` and a measurable transport

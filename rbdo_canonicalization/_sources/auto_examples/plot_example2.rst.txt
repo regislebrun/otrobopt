@@ -84,7 +84,7 @@ Solution: :math:`\hat{x} = [15, 30]`
 
  .. code-block:: none
 
-    x*= [15,30] J(x*)= [45.6015] iteration= 2
+    x*= [15.0002,30.0004] J(x*)= [45.6021] iteration= 2
 
 
 

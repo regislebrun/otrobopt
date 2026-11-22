@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Inverse FORM with a cantilever beam &#8212; OTRobOpt 0.18 documentation</title>
+    <title>Inverse FORM with a cantilever beam &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-    <script src="../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="index.html" title="Examples"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Inverse FORM with a cantilever beam</a></li> 
       </ul>
@@ -158,9 +158,9 @@ The remaining random inputs are E, F, I.</p>
 </span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="s1">Hasofer-Lind beta =</span><span class="s1">'</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.InverseFORMResult.html#otrobopt.InverseFORMResult.getHasoferReliabilityIndex" title="otrobopt.InverseFORMResult.getHasoferReliabilityIndex"><span class="n">result</span><span class="o">.</span><span class="n">getHasoferReliabilityIndex</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="s1">Convergence criteria =</span><span class="s1">'</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.InverseFORMResult.html#otrobopt.InverseFORMResult.getConvergenceCriteria" title="otrobopt.InverseFORMResult.getConvergenceCriteria"><span class="n">result</span><span class="o">.</span><span class="n">getConvergenceCriteria</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Calibrated L = [2.18001]
-Hasofer-Lind beta = 2.9999999999999996
-Convergence criteria = [4,0,1.83978e-05,4.44089e-16]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Calibrated L = [2.17993]
+Hasofer-Lind beta = 3.0
+Convergence criteria = [3,0,4.70338e-05,0]
 </pre></div>
 </div>
 <p>The calibrated length <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDMuNi4xIC0tPgo8c3ZnIHZlcnNpb249JzEuMScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgd2lkdGg9JzEyLjE5ODY4OXB0JyBoZWlnaHQ9JzguMTY5MzY2cHQnIHZpZXdCb3g9JzAgLTguMTY5MzY2IDEyLjE5ODY4OSA4LjE2OTM2Nic+CjxkZWZzPgo8cGF0aCBpZD0nZzAtMycgZD0nTTMuMjkxNjU2LTEuMDUyMDU1QzMuMzYzMzg3LTEuMDA0MjM0IDMuMzg3Mjk4LTEuMDA0MjM0IDMuNDI3MTQ4LTEuMDA0MjM0QzMuNTU0NjctMS4wMDQyMzQgMy42NjYyNTItMS4xMDc4NDYgMy42NjYyNTItMS4yNTEzMDhDMy42NjYyNTItMS40MDI3NCAzLjU4NjU1LTEuNDM0NjIgMy40NjY5OTktMS40OTA0MTFDMi45MzMwMDEtMS43Mzc0ODQgMi43NDE3MTktMS44MjUxNTYgMi4zNTExODMtMS45ODQ1NThMMy4yODM2ODYtMi40MDY5NzRDMy4zNDc0NDctMi40MzA4ODQgMy40OTg4NzktMi41MDI2MTUgMy41NjI2NC0yLjUyNjUyNkMzLjY0MjM0MS0yLjU3NDM0NiAzLjY2NjI1Mi0yLjY1NDA0NyAzLjY2NjI1Mi0yLjcyNTc3OEMzLjY2NjI1Mi0yLjgyMTQyIDMuNjE4NDMxLTIuOTcyODUyIDMuMzc5MzI4LTIuOTcyODUyTDIuMjMxNjMxLTIuMTkxNzgxTDIuMzQzMjEzLTMuMzcxMzU3QzIuMzU5MTUzLTMuNTA2ODQ5IDIuMzQzMjEzLTMuNzA2MTAyIDIuMTEyMDgtMy43MDYxMDJDMS45Njg2MTgtMy43MDYxMDIgMS44NTcwMzYtMy41ODY1NSAxLjg4MDk0Ni0zLjQ3NDk2OVYtMy4zNzkzMjhMMS45OTI1MjgtMi4xOTE3ODFMLjkzMjUwMy0yLjkyNTAzMUMuODYwNzcyLTIuOTcyODUyIC44MzY4NjItMi45NzI4NTIgLjc5NzAxMS0yLjk3Mjg1MkMuNjY5NDg5LTIuOTcyODUyIC41NTc5MDgtMi44NjkyNCAuNTU3OTA4LTIuNzI1Nzc4Qy41NTc5MDgtMi41NzQzNDYgLjYzNzYwOS0yLjU0MjQ2NiAuNzU3MTYxLTIuNDg2Njc1QzEuMjkxMTU4LTIuMjM5NjAxIDEuNDgyNDQxLTIuMTUxOTMgMS44NzI5NzYtMS45OTI1MjhMLjk0MDQ3My0xLjU3MDExMkMuODc2NzEyLTEuNTQ2MjAyIC43MjUyOC0xLjQ3NDQ3MSAuNjYxNTE5LTEuNDUwNTZDLjU4MTgxOC0xLjQwMjc0IC41NTc5MDgtMS4zMjMwMzkgLjU1NzkwOC0xLjI1MTMwOEMuNTU3OTA4LTEuMTA3ODQ2IC42Njk0ODktMS4wMDQyMzQgLjc5NzAxMS0xLjAwNDIzNEMuODYwNzcyLTEuMDA0MjM0IC44NzY3MTItMS4wMDQyMzQgMS4wNzU5NjUtMS4xNDc2OTZMMS45OTI1MjgtMS43ODUzMDVMMS44NzI5NzYtLjUwMjExN0MxLjg3Mjk3Ni0uMzQyNzE1IDIuMDA4NDY4LS4yNzA5ODQgMi4xMTIwOC0uMjcwOTg0UzIuMzUxMTgzLS4zNDI3MTUgMi4zNTExODMtLjUwMjExN0MyLjM1MTE4My0uNTgxODE4IDIuMzE5MzAzLS44MzY4NjIgMi4zMTEzMzMtLjkzMjUwM0MyLjI3OTQ1Mi0xLjIwMzQ4NyAyLjI1NTU0Mi0xLjUwNjM1MSAyLjIzMTYzMS0xLjc4NTMwNUwzLjI5MTY1Ni0xLjA1MjA1NVonLz4KPHBhdGggaWQ9J2cxLTc2JyBkPSdNNC4zODc1NDctNy4yNDQ4MzJDNC40OTUxNDMtNy42OTkxMjggNC41MzEwMDktNy44MTg2OCA1LjU4MzA2NC03LjgxODY4QzUuOTA1ODUzLTcuODE4NjggNS45ODk1MzktNy44MTg2OCA1Ljk4OTUzOS04LjA0NTgyOEM1Ljk4OTUzOS04LjE2NTM4IDUuODU4MDMyLTguMTY1MzggNS44MTAyMTItOC4xNjUzOEM1LjU3MTEwOC04LjE2NTM4IDUuMjk2MTM5LTguMTQxNDY5IDUuMDU3MDM2LTguMTQxNDY5SDMuNDU1MDQ0QzMuMjI3ODk1LTguMTQxNDY5IDIuOTY0ODgyLTguMTY1MzggMi43Mzc3MzMtOC4xNjUzOEMyLjY0MjA5Mi04LjE2NTM4IDIuNTEwNTg1LTguMTY1MzggMi41MTA1ODUtNy45MzgyMzJDMi41MTA1ODUtNy44MTg2OCAyLjYxODE4Mi03LjgxODY4IDIuNzk3NTA5LTcuODE4NjhDMy41MjY3NzUtNy44MTg2OCAzLjUyNjc3NS03LjcyMzAzOSAzLjUyNjc3NS03LjU5MTUzMkMzLjUyNjc3NS03LjU2NzYyMSAzLjUyNjc3NS03LjQ5NTg5IDMuNDc4OTU0LTcuMzE2NTYzTDEuODY1MDA2LS44ODQ2ODJDMS43NTc0MS0uNDY2MjUyIDEuNzMzNDk5LS4zNDY3IC44OTY2MzgtLjM0NjdDLjY2OTQ4OS0uMzQ2NyAuNTQ5OTM4LS4zNDY3IC41NDk5MzgtLjEzMTUwN0MuNTQ5OTM4IDAgLjYyMTY2OSAwIC44NjA3NzIgMEg2LjIxNjY4N0M2LjQ3OTcwMSAwIDYuNDkxNjU2LS4wMTE5NTUgNi41NzUzNDItLjIyNzE0OEw3LjQ5NTg5LTIuNzczNTk5QzcuNTE5ODAxLTIuODMzMzc1IDcuNTQzNzExLTIuOTA1MTA2IDcuNTQzNzExLTIuOTQwOTcxQzcuNTQzNzExLTMuMDEyNzAyIDcuNDgzOTM1LTMuMDYwNTIzIDcuNDI0MTU5LTMuMDYwNTIzQzcuNDEyMjA0LTMuMDYwNTIzIDcuMzUyNDI4LTMuMDYwNTIzIDcuMzI4NTE4LTMuMDEyNzAyQzcuMzA0NjA4LTMuMDAwNzQ3IDcuMzA0NjA4LTIuOTc2ODM3IDcuMjA4OTY2LTIuNzQ5Njg5QzYuODI2NDAxLTEuNjk3NjM0IDYuMjg4NDE4LS4zNDY3IDQuMjY3OTk1LS4zNDY3SDMuMTIwMjk5QzIuOTUyOTI3LS4zNDY3IDIuOTI5MDE2LS4zNDY3IDIuODU3Mjg1LS4zNTg2NTVDMi43MjU3NzgtLjM3MDYxIDIuNzEzODIzLS4zOTQ1MjEgMi43MTM4MjMtLjQ5MDE2MkMyLjcxMzgyMy0uNTczODQ4IDIuNzM3NzMzLS42NDU1NzkgMi43NjE2NDQtLjc1MzE3Nkw0LjM4NzU0Ny03LjI0NDgzMlonLz4KPC9kZWZzPgo8ZyBpZD0ncGFnZTEnPgo8dXNlIHg9JzAnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMS03NicvPgo8dXNlIHg9JzcuOTY0NTA2JyB5PSctNC4zMzg0MzcnIHhsaW5rOmhyZWY9JyNnMC0zJy8+CjwvZz4KPC9zdmc+CjwhLS0gREVQVEg9MCAtLT4=" alt="L^*" style="vertical-align: 0px"/> is the beam length that achieves
@@ -200,7 +200,7 @@ flexible and thus less reliable), and vice versa.</p>
         <li class="right" >
           <a href="index.html" title="Examples"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Inverse FORM with a cantilever beam</a></li> 
       </ul>

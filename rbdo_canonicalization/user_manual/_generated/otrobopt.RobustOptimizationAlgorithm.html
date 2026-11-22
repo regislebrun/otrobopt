@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>RobustOptimizationAlgorithm &#8212; OTRobOpt 0.18 documentation</title>
+    <title>RobustOptimizationAlgorithm &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-    <script src="../../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="otrobopt.MeasureFactory.html" title="MeasureFactory"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RobustOptimizationAlgorithm</a></li> 
       </ul>
@@ -111,7 +111,7 @@
 <dd class="field-odd"><dl>
 <dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="otrobopt.RobustOptimizationProblem.html#otrobopt.RobustOptimizationProblem" title="otrobopt.RobustOptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobustOptimizationProblem</span></code></a></span></dt><dd><p>Robust optimization problem</p>
 </dd>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
 </dd>
 </dl>
 </dd>
@@ -290,8 +290,8 @@ and <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyB
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>maximumEvaluationNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of direct objective function calls through the <cite>()</cite> operator.
-Does not take into account eventual indirect calls through finite difference gradient calls.</p>
+<dt><strong>maximumCallsNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of function evaluations, including direct calls through
+the <cite>()</cite> operator and indirect calls through finite difference gradients.</p>
 </dd>
 </dl>
 </dd>
@@ -394,7 +394,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
 </dd>
 </dl>
 </dd>
@@ -408,7 +408,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </dd>
@@ -422,7 +422,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </dd>
@@ -450,7 +450,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </dd>
@@ -464,7 +464,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
+<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
 </dd>
 </dl>
 </dd>
@@ -530,8 +530,8 @@ and <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyB
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>maximumEvaluationNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of direct objective function calls through the <cite>()</cite> operator.
-Does not take into account eventual indirect calls through finite difference gradient calls.</p>
+<dt><strong>maximumCallsNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of function evaluations, including direct calls through
+the <cite>()</cite> operator and indirect calls through finite difference gradients.</p>
 </dd>
 </dl>
 </dd>
@@ -634,7 +634,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Optimization solver</p>
 </dd>
 </dl>
 </dd>
@@ -648,7 +648,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </dd>
@@ -692,7 +692,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </dd>
@@ -720,7 +720,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </dd>
@@ -734,7 +734,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
+<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
 </dd>
 </dl>
 </dd>
@@ -793,7 +793,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
         <li class="right" >
           <a href="otrobopt.MeasureFactory.html" title="MeasureFactory"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RobustOptimizationAlgorithm</a></li> 
       </ul>

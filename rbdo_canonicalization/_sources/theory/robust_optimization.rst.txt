@@ -73,6 +73,13 @@ where :math:`p_i` is the probability of the atom :math:`\theta_i`.  The mean
 is defined for a vector-valued function as well; the scalar restriction comes
 from the robust problem, not from the measure.
 
+The integral is evaluated with a density threshold: a density below
+``getPDFThreshold()`` (``2e-16`` by default) is treated as zero.  The
+threshold applies to the distribution of the measure, so after a
+canonicalization it applies to the reference density.  Raising it can discard
+a region that the original integral would have kept, in particular when the
+reference distribution has a different scale from the original one.
+
 Variance
 ^^^^^^^^
 
@@ -116,12 +123,30 @@ function over the support of the distribution,
     \rho_{\cD}\bigl[J(x, \cdot)\bigr]
     = \inf_{\theta \in \supp{\cD}} J(x, \theta)
 
-for minimization, and the supremum for maximization.  When the support is
-unbounded or when the user restricts the domain, the extremum is taken over an
-explicit optimization domain instead; the domain policy is described in
-:doc:`invariance`.  For continuous distributions the inner problem is solved by a
-nested optimizer (default: TNC); for discrete distributions the support is
-scanned exhaustively.
+for minimization, and the supremum for maximization.  When the user sets an
+optimization domain with ``setOptimizationDomain``, the extremum is taken over
+that domain.  Otherwise a continuous distribution is searched over
+``distribution.getRange()``.  Canonicalization requires an explicit domain when
+the distribution parameter is optimized and the reference distribution is not
+the standard normal distribution: the reference support is then unbounded and
+the stored domain has no image in the reference space.  A frozen parameter and
+the standard normal fast path keep the distribution range, so an unbounded
+range alone does not require a domain (the domain policy is described in
+:doc:`invariance`).  For continuous distributions the inner problem is solved
+by a nested optimizer (default: TNC).  For discrete distributions the support
+points whose probability exceeds ``MeasureEvaluation.getPDFThreshold()`` are
+scanned, and points at or below the threshold are excluded, so the support is
+not scanned exhaustively.
+
+The domain stored by a worst-case measure is expressed in the coordinates of
+the original uncertain vector :math:`\theta`.  When the distribution parameter
+is frozen, the canonicalization keeps these coordinates and preserves the
+domain.  When the parameter is optimized, the worst-case variable becomes the
+reference realization and the stored domain has no image in general: the
+canonicalizer rejects the configuration instead of silently dropping the
+restriction.  Provide the domain in the reference space with
+``CanonicalizationOptions.setWorstCaseDomain``, or freeze the parameter with
+``setOptimizeParameter(False)``.
 
 Quantile
 ^^^^^^^^
@@ -135,9 +160,12 @@ output distribution,
     = \inf\Bigl\{ t \in \Rset :
       \Prob{J(x, \Theta) \le t} \ge \alpha \Bigr\}.
 
-The implementation solves :math:`F(t) = \alpha` by Brent root finding, where
-:math:`F` is the distribution function of :math:`J(x, \Theta)`.  The measure is
-restricted to scalar functions.
+The implementation solves :math:`F(t) = \alpha` by Brent root finding when
+:math:`F` is continuous, where :math:`F` is the distribution function of
+:math:`J(x, \Theta)`.  For a discrete distribution the measure builds the
+finite discrete distribution of the output and calls its quantile function
+directly, because a discrete distribution function need not attain
+:math:`\alpha`.  The measure is restricted to scalar functions.
 
 Reliability measures
 --------------------
@@ -180,17 +208,27 @@ comparison operator only selects the sign of the returned scalar.  With
     \lambda = \Phi^{-1}\bigl(P(x)\bigr) - \Phi^{-1}(\alpha),
 
 so the constraint :math:`\lambda \ge 0` is equivalent to
-:math:`P(x) \ge \alpha`.  With :class:`~openturns.Less` the value is
+:math:`P(x) \ge \alpha` when :math:`\alpha` lies in
+:math:`[\mathrm{pdfThreshold}, 1 - \mathrm{pdfThreshold}]`.  The implementation
+clips :math:`P(x)` to that interval before the probit transform.  With
+:class:`~openturns.GreaterOrEqual` and
+:math:`\alpha > 1 - \mathrm{pdfThreshold}`, the constraint cannot be
+satisfied.  With :class:`~openturns.Less` the value is
 
 .. math::
 
     \lambda = \Phi^{-1}(\alpha) - \Phi^{-1}\bigl(P(x)\bigr),
 
-which represents :math:`P(x) \le \alpha`, equivalently
+which represents :math:`P(x) \le \alpha` when :math:`\alpha` lies in
+:math:`[\mathrm{pdfThreshold}, 1 - \mathrm{pdfThreshold}]`, equivalently
 :math:`\Prob{\bigcup_{k=1}^{n_g} \{G_k(x, \Theta) < 0\}} \ge 1 - \alpha`.
 The ``Less`` form is therefore the complement form, not a different event: it
-is satisfied when at least one component violates its constraint.  A
-reliability requirement :math:`\Prob{G(x, \Theta) \ge 0} \ge \alpha` uses
+is satisfied when the probability that at least one component violates its
+constraint is at least :math:`1 - \alpha`.  The same clipping applies: above
+:math:`1 - \mathrm{pdfThreshold}` the clipped probability keeps the constraint
+positive even when :math:`P(x) = 1`, and below :math:`\mathrm{pdfThreshold}` it
+keeps the constraint negative even when :math:`P(x) = 0`.  A reliability
+requirement :math:`\Prob{G(x, \Theta) \ge 0} \ge \alpha` uses
 ``GreaterOrEqual``.
 
 The probit transform stretches the probability scale near zero and one, which
@@ -230,8 +268,9 @@ measures into a single vector-valued measure,
 It is used internally by :class:`~otrobopt.RobustOptimizationProblem` to
 assemble the objective and the constraints into one evaluation.  The children
 share the same distribution and the same parameter vector.  A mixed set of
-distributions is rejected by the problem and by the canonicalizer, including
-inside an aggregate.
+distributions is rejected by the problem when the measures differ at the top
+level.  The canonicalizer also rejects a mixed set of distributions inside an
+aggregate.
 
 Robust optimization problem
 ---------------------------
@@ -295,6 +334,11 @@ discretization and re-optimizes until convergence.  The algorithm is
     \qquad \text{Let } x_k \text{ be the new optimum} \\
     \qquad \text{Stop when } \|x_k - x_{k-1}\| < \varepsilon
     \end{array}
+
+The sample starts empty: the first iteration draws
+:math:`\text{samplingSizeIncrement}(N_0)` samples.  With the default identity
+increment, this is :math:`N_0` samples, so the first deterministic problem is
+solved with :math:`N_0` samples and not :math:`2N_0`.
 
 The main aspects are the following.
 

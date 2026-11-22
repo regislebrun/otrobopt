@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DoubleLoopRBDOAlgorithm &#8212; OTRobOpt 0.18 documentation</title>
+    <title>DoubleLoopRBDOAlgorithm &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-    <script src="../../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="otrobopt.SequentialMonteCarloRobustAlgorithm.html" title="SequentialMonteCarloRobustAlgorithm"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">DoubleLoopRBDOAlgorithm</a></li> 
       </ul>
@@ -152,11 +152,11 @@ The treatment is always explicit and is reported by
 <dd class="field-odd"><dl>
 <dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="otrobopt.RBDOProblem.html#otrobopt.RBDOProblem" title="otrobopt.RBDOProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RBDOProblem</span></code></a></span></dt><dd><p>Reliability-based design optimization problem.</p>
 </dd>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer deterministic optimization algorithm.</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer deterministic optimization algorithm.</p>
 </dd>
-<dt><strong>innerSolver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.  It
+<dt><strong>innerSolver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.  It
 must support the constraints used by the selected method.  The default is
-<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Cobyla.html#openturns.Cobyla" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cobyla</span></code></a>.</p>
+<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Cobyla.html#openturns.Cobyla" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cobyla</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -329,7 +329,7 @@ and Dutfoy; the normal-space formulas are recovered with
 <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDMuNi4xIC0tPgo8c3ZnIHZlcnNpb249JzEuMScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgd2lkdGg9JzM2LjU4MTk4M3B0JyBoZWlnaHQ9JzkuOTYyNjI5cHQnIHZpZXdCb3g9JzAgLTguMTY5MzY2IDM2LjU4MTk4MyA5Ljk2MjYyOSc+CjxkZWZzPgo8cGF0aCBpZD0nZzAtMjMnIGQ9J00xLjgzMzEyNi0zLjI4MzY4NkMxLjg0MTA5Ni0zLjMxNTU2NyAxLjg0OTA2Ni0zLjM2MzM4NyAxLjg0OTA2Ni0zLjQwMzIzOEMxLjg0OTA2Ni0zLjQxMTIwOCAxLjg0OTA2Ni0zLjUxNDgxOSAxLjcyMTU0NC0zLjUxNDgxOVMuODEyOTUxLTMuNDQzMDg4IC42Nzc0Ni0zLjQyNzE0OEMuNTk3NzU4LTMuNDExMjA4IC41NjU4NzgtMy4zNDc0NDcgLjU2NTg3OC0zLjI3NTcxNkMuNTY1ODc4LTMuMTY0MTM0IC42Nzc0Ni0zLjE2NDEzNCAuNzczMTAxLTMuMTY0MTM0Qy45NDg0NDMtMy4xNjQxMzQgMS4xNTU2NjYtMy4xNjQxMzQgMS4xNTU2NjYtMy4wNTI1NTNDMS4xNTU2NjYtMy4wMDQ3MzIgMS4wNjc5OTUtMi42NDYwNzcgMS4wMTIyMDQtMi40NDY4MjRDLjk4MDMyNC0yLjI5NTM5MiAuODQ0ODMyLTEuNzUzNDI1IC44MTI5NTEtMS42NDE4NDNMLjUyNjAyNy0uNDk0MTQ3Qy40OTQxNDctLjM2NjYyNSAuNDM4MzU2LS4xMzU0OTIgLjQzODM1Ni0uMTExNTgyQy40MzgzNTYgMCAuNTU3OTA4IDAgLjU4OTc4OCAwSC43MDkzNEMxLjQ1MDU2LS4xMTk1NTIgMi4zNTExODMtLjUwMjExNyAzLjEzMjI1NC0xLjE5NTUxN0M0LjIyNDE1OS0yLjE2Nzg3IDQuMzk5NTAyLTMuMjQzODM2IDQuMzk5NTAyLTMuMjY3NzQ2QzQuMzk5NTAyLTMuNDM1MTE4IDQuMjcxOTgtMy41MTQ4MTkgNC4xMzY0ODgtMy41MTQ4MTlDMy45ODUwNTYtMy41MTQ4MTkgMy44NDk1NjQtMy40MjcxNDggMy43ODU4MDMtMy4yMTE5NTVDMy4yNTk3NzYtMS4zODY4IDEuOTA0ODU3LS41NjU4NzggMS4wOTE5MDUtLjMxODgwNEwxLjgzMzEyNi0zLjI4MzY4NlonLz4KPHBhdGggaWQ9J2cxLTgzJyBkPSdNNy41OTE1MzItOC4zMDg4NDJDNy41OTE1MzItOC40MTY0MzggNy41MDc4NDYtOC40MTY0MzggNy40ODM5MzUtOC40MTY0MzhDNy40MzYxMTUtOC40MTY0MzggNy40MjQxNTktOC40MDQ0ODMgNy4yODA2OTctOC4yMjUxNTZDNy4yMDg5NjYtOC4xNDE0NjkgNi43MTg4MDQtNy41MTk4MDEgNi43MDY4NDktNy41MDc4NDZDNi4zMTIzMjktOC4yODQ5MzIgNS41MjMyODgtOC40MTY0MzggNS4wMjExNzEtOC40MTY0MzhDMy41MDI4NjQtOC40MTY0MzggMi4xMjgwMi03LjAyOTYzOSAyLjEyODAyLTUuNjc4NzA1QzIuMTI4MDItNC43ODIwNjcgMi42NjYwMDItNC4yNTYwNCAzLjI1MTgwNi00LjA1MjgwMkMzLjM4MzMxMy00LjAwNDk4MSA0LjA4ODY2Ny0zLjgxMzY5OSA0LjQ0NzMyMy0zLjczMDAxMkM1LjA1NzAzNi0zLjU2MjY0IDUuMjEyNDUzLTMuNTE0ODE5IDUuNDYzNTEyLTMuMjUxODA2QzUuNTExMzMzLTMuMTkyMDMgNS43NTA0MzYtMi45MTcwNjEgNS43NTA0MzYtMi4zNTUxNjhDNS43NTA0MzYtMS4yNDMzMzcgNC43MjIyOTEtLjA5NTY0MSAzLjUyNjc3NS0uMDk1NjQxQzIuNTQ2NDUxLS4wOTU2NDEgMS40NTg1MzEtLjUxNDA3MiAxLjQ1ODUzMS0xLjg1MzA1MUMxLjQ1ODUzMS0yLjA4MDE5OSAxLjUwNjM1MS0yLjM2NzEyMyAxLjU0MjIxNy0yLjQ4NjY3NUMxLjU0MjIxNy0yLjUyMjU0IDEuNTU0MTcyLTIuNTgyMzE2IDEuNTU0MTcyLTIuNjA2MjI3QzEuNTU0MTcyLTIuNjU0MDQ3IDEuNTMwMjYyLTIuNzEzODIzIDEuNDM0NjItMi43MTM4MjNDMS4zMjcwMjQtMi43MTM4MjMgMS4zMTUwNjgtMi42ODk5MTMgMS4yNjcyNDgtMi40ODY2NzVMLjY1NzUzNC0uMDM1ODY2Qy42NTc1MzQtLjAyMzkxIC42MDk3MTQgLjEzMTUwNyAuNjA5NzE0IC4xNDM0NjJDLjYwOTcxNCAuMjUxMDU5IC43MDUzNTUgLjI1MTA1OSAuNzI5MjY1IC4yNTEwNTlDLjc3NzA4NiAuMjUxMDU5IC43ODkwNDEgLjIzOTEwMyAuOTMyNTAzIC4wNTk3NzZMMS40ODI0NDEtLjY1NzUzNEMxLjc2OTM2NS0uMjI3MTQ4IDIuMzkxMDM0IC4yNTEwNTkgMy41MDI4NjQgLjI1MTA1OUM1LjA0NTA4MSAuMjUxMDU5IDYuNDU1NzkxLTEuMjQzMzM3IDYuNDU1NzkxLTIuNzM3NzMzQzYuNDU1NzkxLTMuMjM5ODUxIDYuMzM2MjM5LTMuNjgyMTkyIDUuODgxOTQzLTQuMTI0NTMzQzUuNjMwODg0LTQuMzc1NTkyIDUuNDE1NjkxLTQuNDM1MzY3IDQuMzE1ODE2LTQuNzIyMjkxQzMuNTE0ODE5LTQuOTM3NDg0IDMuNDA3MjIzLTQuOTczMzUgMy4xOTIwMy01LjE2NDYzM0MyLjk4ODc5Mi01LjM2Nzg3IDIuODMzMzc1LTUuNjU0Nzk1IDIuODMzMzc1LTYuMDYxMjdDMi44MzMzNzUtNy4wNjU1MDQgMy44NDk1NjQtOC4wOTM2NDkgNC45ODUzMDUtOC4wOTM2NDlDNi4xNTY5MTItOC4wOTM2NDkgNi43MDY4NDktNy4zNzYzMzkgNi43MDY4NDktNi4yNDA1OThDNi43MDY4NDktNS45Mjk3NjMgNi42NDcwNzMtNS42MDY5NzQgNi42NDcwNzMtNS41NTkxNTNDNi42NDcwNzMtNS40NTE1NTcgNi43NDI3MTUtNS40NTE1NTcgNi43Nzg1OC01LjQ1MTU1N0M2Ljg4NjE3Ny01LjQ1MTU1NyA2Ljg5ODEzMi01LjQ4NzQyMiA2Ljk0NTk1My01LjY3ODcwNUw3LjU5MTUzMi04LjMwODg0MlonLz4KPHBhdGggaWQ9J2cyLTgnIGQ9J000LjY1MDU2LTEuNTc4MDgyQzYuNDY3NzQ2LTEuNzMzNDk5IDcuNzk0NzctMi44NDUzMyA3Ljc5NDc3LTQuMDc2NzEyQzcuNzk0NzctNS4zNTU5MTUgNi40MzE4OC02LjQzMTg4IDQuNjUwNTYtNi41ODcyOThWLTcuMjQ0ODMyQzQuNjUwNTYtNy42NzUyMTggNC42NzQ0NzEtNy44MTg2OCA1LjcxNDU3LTcuODE4NjhINi4wNzMyMjVWLTguMTY1MzhDNS43NTA0MzYtOC4xNDE0NjkgNC41OTA3ODUtOC4xNDE0NjkgNC4xOTYyNjQtOC4xNDE0NjlTMi42NDIwOTItOC4xNDE0NjkgMi4zMTkzMDMtOC4xNjUzOFYtNy44MTg2OEgyLjY3Nzk1OEMzLjcxODA1Ny03LjgxODY4IDMuNzQxOTY4LTcuNjc1MjE4IDMuNzQxOTY4LTcuMjQ0ODMyVi02LjU3NTM0MkMxLjg4ODkxNy02LjQwNzk3IC42NDU1NzktNS4yNzIyMjkgLjY0NTU3OS00LjA4ODY2N0MuNjQ1NTc5LTIuODU3Mjg1IDEuOTI0NzgyLTEuNzU3NDEgMy43NDE5NjgtMS41OTAwMzdWLS45MjA1NDhDMy43NDE5NjgtLjQ5MDE2MiAzLjcxODA1Ny0uMzQ2NyAyLjY3Nzk1OC0uMzQ2N0gyLjMxOTMwM1YwQzIuNjQyMDkyLS4wMjM5MSAzLjgwMTc0My0uMDIzOTEgNC4xOTYyNjQtLjAyMzkxUzUuNzUwNDM2LS4wMjM5MSA2LjA3MzIyNSAwVi0uMzQ2N0g1LjcxNDU3QzQuNjc0NDcxLS4zNDY3IDQuNjUwNTYtLjQ5MDE2MiA0LjY1MDU2LS45MjA1NDhWLTEuNTc4MDgyWk0zLjc0MTk2OC0xLjg0MTA5NkMyLjQzODg1NC0yLjAwODQ2OCAxLjczMzQ5OS0yLjc3MzU5OSAxLjczMzQ5OS00LjA3NjcxMkMxLjczMzQ5OS01LjM5MTc4MSAyLjQyNjg5OS02LjE1NjkxMiAzLjc0MTk2OC02LjMyNDI4NFYtMS44NDEwOTZaTTQuNjUwNTYtNi4zMzYyMzlDNi4wNDkzMTUtNi4xNTY5MTIgNi43MDY4NDktNS4zNTU5MTUgNi43MDY4NDktNC4wODg2NjdDNi43MDY4NDktMi44NDUzMyA2LjA5NzEzNi0yLjAyMDQyMyA0LjY1MDU2LTEuODI5MTQxVi02LjMzNjIzOVonLz4KPHBhdGggaWQ9J2cyLTYxJyBkPSdNOC4wNjk3MzgtMy44NzM0NzRDOC4yMzcxMTEtMy44NzM0NzQgOC40NTIzMDQtMy44NzM0NzQgOC40NTIzMDQtNC4wODg2NjdDOC40NTIzMDQtNC4zMTU4MTYgOC4yNDkwNjYtNC4zMTU4MTYgOC4wNjk3MzgtNC4zMTU4MTZIMS4wMjgxNDRDLjg2MDc3Mi00LjMxNTgxNiAuNjQ1NTc5LTQuMzE1ODE2IC42NDU1NzktNC4xMDA2MjNDLjY0NTU3OS0zLjg3MzQ3NCAuODQ4ODE3LTMuODczNDc0IDEuMDI4MTQ0LTMuODczNDc0SDguMDY5NzM4Wk04LjA2OTczOC0xLjY0OTgxM0M4LjIzNzExMS0xLjY0OTgxMyA4LjQ1MjMwNC0xLjY0OTgxMyA4LjQ1MjMwNC0xLjg2NTAwNkM4LjQ1MjMwNC0yLjA5MjE1NCA4LjI0OTA2Ni0yLjA5MjE1NCA4LjA2OTczOC0yLjA5MjE1NEgxLjAyODE0NEMuODYwNzcyLTIuMDkyMTU0IC42NDU1NzktMi4wOTIxNTQgLjY0NTU3OS0xLjg3Njk2MUMuNjQ1NTc5LTEuNjQ5ODEzIC44NDg4MTctMS42NDk4MTMgMS4wMjgxNDQtMS42NDk4MTNIOC4wNjk3MzhaJy8+CjwvZGVmcz4KPGcgaWQ9J3BhZ2UxJz4KPHVzZSB4PScwJyB5PScwJyB4bGluazpocmVmPScjZzEtODMnLz4KPHVzZSB4PSc3LjE5OTM0JyB5PScxLjc5MzI2MycgeGxpbms6aHJlZj0nI2cwLTIzJy8+Cjx1c2UgeD0nMTUuNzAyMTgzJyB5PScwJyB4bGluazpocmVmPScjZzItNjEnLz4KPHVzZSB4PScyOC4xMjc2NjQnIHk9JzAnIHhsaW5rOmhyZWY9JyNnMi04Jy8+CjwvZz4KPC9zdmc+CjwhLS0gREVQVEg9MiAtLT4=" alt="S_\nu=\Phi" style="vertical-align: -2px"/>.  See the theory page for details.</p>
 <p>The algorithm requires the limit-state function to expose a parameter
 gradient when a gradient-based inner solver is used.  The default
-<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Cobyla.html#openturns.Cobyla" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cobyla</span></code></a> inner solver does not require it.</p>
+<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Cobyla.html#openturns.Cobyla" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cobyla</span></code></a> inner solver does not require it.</p>
 <p>The default inner solver tolerances can be changed with the ResourceMap keys
 <code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumCallsNumber</span></code>,
 <code class="docutils literal notranslate"><span class="pre">DoubleLoopRBDOAlgorithm-DefaultInnerMaximumConstraintError</span></code> and
@@ -431,7 +431,7 @@ does not fully converge and will allow one to still find a feasible candidate.</
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.</p>
 </dd>
 </dl>
 </dd>
@@ -476,8 +476,8 @@ and <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyB
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>maximumEvaluationNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of direct objective function calls through the <cite>()</cite> operator.
-Does not take into account eventual indirect calls through finite difference gradient calls.</p>
+<dt><strong>maximumCallsNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of function evaluations, including direct calls through
+the <cite>()</cite> operator and indirect calls through finite difference gradients.</p>
 </dd>
 </dl>
 </dd>
@@ -595,7 +595,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer optimization algorithm.</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer optimization algorithm.</p>
 </dd>
 </dl>
 </dd>
@@ -629,7 +629,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>designPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Image of the standard-space design point by the inverse isoprobabilistic
+<dt><strong>designPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Image of the standard-space design point by the inverse isoprobabilistic
 transformation.</p>
 </dd>
 </dl>
@@ -650,7 +650,7 @@ transformation.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </dd>
@@ -702,7 +702,7 @@ standard space belongs to the failure domain.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </dd>
@@ -716,7 +716,7 @@ standard space belongs to the failure domain.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>designPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Most probable point in the standard normal space.</p>
+<dt><strong>designPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Most probable point in the standard normal space.</p>
 </dd>
 </dl>
 </dd>
@@ -736,7 +736,7 @@ standard space belongs to the failure domain.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </dd>
@@ -750,7 +750,7 @@ standard space belongs to the failure domain.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
+<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
 </dd>
 </dl>
 </dd>
@@ -818,7 +818,7 @@ does not fully converge and will allow one to still find a feasible candidate.</
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Inner reliability algorithm applied to the scalarized limit state.</p>
 </dd>
 </dl>
 </dd>
@@ -864,8 +864,8 @@ and <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyB
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>maximumEvaluationNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of direct objective function calls through the <cite>()</cite> operator.
-Does not take into account eventual indirect calls through finite difference gradient calls.</p>
+<dt><strong>maximumCallsNumber</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of function evaluations, including direct calls through
+the <cite>()</cite> operator and indirect calls through finite difference gradients.</p>
 </dd>
 </dl>
 </dd>
@@ -983,7 +983,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer optimization algorithm.</p>
+<dt><strong>solver</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.OptimizationAlgorithm</span></code></a></span></dt><dd><p>Outer optimization algorithm.</p>
 </dd>
 </dl>
 </dd>
@@ -997,7 +997,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </dd>
@@ -1055,7 +1055,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.OptimizationResult.html#openturns.OptimizationResult" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </dd>
@@ -1069,7 +1069,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </dd>
@@ -1083,7 +1083,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
+<dt><strong>startingSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>Starting sample.</p>
 </dd>
 </dl>
 </dd>
@@ -1142,7 +1142,7 @@ if <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBl
         <li class="right" >
           <a href="otrobopt.SequentialMonteCarloRobustAlgorithm.html" title="SequentialMonteCarloRobustAlgorithm"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">DoubleLoopRBDOAlgorithm</a></li> 
       </ul>

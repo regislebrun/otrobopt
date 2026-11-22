@@ -130,8 +130,8 @@ not require the limit-state gradient.
 
     Optimal design           : -1.2815465655446003
     Target reliability index : 1.2815515655446004
-    Reliability index        : 1.2815465436236715
-    Approximate probability  : 0.8999991186584178
+    Reliability index        : 1.2815465555446004
+    Approximate probability  : 0.8999991207505345
     Physical shift           : [5e-06]
     Objective evaluations    : 61
     Limit-state evaluations  : 152
@@ -172,7 +172,7 @@ safe probability are known analytically.
     Ground truth design      : -1.2815515655446004
     Design error             : 5.000000000032756e-06
     True probability         : 0.8999991225055289
-    Probability error        : 3.847111185173446e-09
+    Probability error        : 1.7549944830719255e-09
     Objective ground truth   : 1.642374415149816
     Objective error          : 1.2815490655571082e-05
 

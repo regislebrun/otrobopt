@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CanonicalizationOptions &#8212; OTRobOpt 0.18 documentation</title>
+    <title>CanonicalizationOptions &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-    <script src="../../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="otrobopt.RBDOProblem.html" title="RBDOProblem"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">CanonicalizationOptions</a></li> 
       </ul>
@@ -120,39 +120,16 @@ bounded range.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">USER_DOMAIN</span></code>: use the automatic reference policy and require
 <code class="docutils literal notranslate"><span class="pre">worstCaseDomain</span></code>.</p></li>
 </ul>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>reference</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>Reference distribution, empty for the automatic policy.</p>
-</dd>
-<dt><strong>parameterBounds</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>Bounds on the active distribution parameter, empty for no bounds.  A
-full-dimensional interval is also accepted and filtered to the active
-coordinates.</p>
-</dd>
-<dt><strong>parameterStart</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Initial active distribution parameter, empty for the current parameter.
-A full-dimensional point is also accepted and filtered to the active
-coordinates.</p>
-</dd>
-<dt><strong>activeParameter</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Indices.html#openturns.Indices" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt><dd><p>Active parameter indices in the full distribution parameter.  When it is
-not set, the default policy of
-<a class="reference internal" href="otrobopt.ParametricDistributionTransformation.html#otrobopt.ParametricDistributionTransformation" title="otrobopt.ParametricDistributionTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricDistributionTransformation</span></code></a> is used: the
-trailing dependence or copula block is inactive.</p>
-</dd>
-<dt><strong>optimizeParameter</strong><span class="classifier">bool</span></dt><dd><p>Whether the distribution parameter is part of the decision vector.
-Default is True.  When the active parameter is empty, the parameter is
-frozen and the decision vector is reduced to the design variables.</p>
-</dd>
-<dt><strong>worstCasePolicy</strong><span class="classifier">int</span></dt><dd><p>Worst-case policy. Default is <code class="docutils literal notranslate"><span class="pre">CanonicalizationOptions.AUTO</span></code>.</p>
-</dd>
-<dt><strong>worstCaseDomain</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt><dd><p>Worst-case optimization domain in the reference space, empty for the
-range of the reference distribution.</p>
-</dd>
-<dt><strong>The attributes can also be set with the ``setReference``,</strong></dt><dd></dd>
-<dt><strong>``setParameterBounds``, ``setParameterStart``, ``setActiveParameter``,</strong></dt><dd></dd>
-<dt><strong>``setOptimizeParameter``, ``setWorstCasePolicy`` and</strong></dt><dd></dd>
-<dt><strong>``setWorstCaseDomain`` methods, which accept the usual Python arguments. Use</strong></dt><dd></dd>
-<dt><strong>``setReference`` to select explicitly the default ``Uniform(-1, 1)``</strong></dt><dd></dd>
-<dt><strong>distribution as reference.</strong></dt><dd></dd>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>activeParameter</strong></dt><dd></dd>
+<dt><strong>optimizeParameter</strong></dt><dd></dd>
+<dt><strong>parameterBounds</strong></dt><dd></dd>
+<dt><strong>parameterStart</strong></dt><dd></dd>
+<dt><strong>reference</strong></dt><dd></dd>
+<dt><strong>worstCaseDomain</strong></dt><dd></dd>
+<dt><strong>worstCasePolicy</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -215,6 +192,39 @@ range of the reference distribution.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>The options are set with the accessors of the class:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">setReference</span></code>: reference distribution, empty for the automatic policy.
+It also selects explicitly the default <code class="docutils literal notranslate"><span class="pre">Uniform(-1,</span> <span class="pre">1)</span></code> distribution as
+reference.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setParameterBounds</span></code>: bounds on the active distribution parameter, empty
+for no bounds.  A full-dimensional interval is also accepted and filtered
+to the active coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setParameterStart</span></code>: initial distribution parameter, empty for the
+current parameter.  When the parameter is optimized, the point is expressed
+in active coordinates; a full-dimensional point is also accepted and only
+its active coordinates are used.  When the parameter is frozen, a
+full-dimensional point sets the whole distribution parameter, so that the
+frozen distribution is exactly the requested one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setActiveParameter</span></code>: active parameter indices in the full distribution
+parameter.  When it is not set, the default policy of
+<a class="reference internal" href="otrobopt.ParametricDistributionTransformation.html#otrobopt.ParametricDistributionTransformation" title="otrobopt.ParametricDistributionTransformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricDistributionTransformation</span></code></a> is used: the
+trailing dependence or copula block is inactive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setOptimizeParameter</span></code>: whether the distribution parameter is part of the
+decision vector.  Default is True.  When the active parameter is empty, the
+parameter is frozen and the decision vector is reduced to the design
+variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setWorstCasePolicy</span></code>: worst-case policy, <code class="docutils literal notranslate"><span class="pre">CanonicalizationOptions.AUTO</span></code>
+by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setWorstCaseDomain</span></code>: worst-case optimization domain in the reference
+space, empty for the range of the reference distribution.  When the
+distribution parameter is frozen, an empty option domain preserves the
+domain stored by the measure instead; an explicit option domain takes
+precedence over it.  When the parameter is optimized, a domain stored by a
+worst-case measure is rejected, because it is expressed in the original
+distribution coordinates and cannot be transported in general.</p></li>
+</ul>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">openturns</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">otrobopt</span>
@@ -251,7 +261,7 @@ range of the reference distribution.</p>
         <li class="right" >
           <a href="otrobopt.RBDOProblem.html" title="RBDOProblem"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">CanonicalizationOptions</a></li> 
       </ul>
