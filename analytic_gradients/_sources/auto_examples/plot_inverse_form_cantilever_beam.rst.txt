@@ -138,9 +138,9 @@ Run the inverse FORM algorithm with a target reliability index
 
  .. code-block:: none
 
-    Calibrated L = [2.18001]
-    Hasofer-Lind beta = 2.9999999999999996
-    Convergence criteria = [4,0,1.83978e-05,4.44089e-16]
+    Calibrated L = [2.17993]
+    Hasofer-Lind beta = 3.0
+    Convergence criteria = [3,0,4.70338e-05,0]
 
 
 

@@ -158,7 +158,7 @@ its FORM probability.
     Algorithm        | design   | index   | probability | obj. evals | limit-state evals
     -----------------+----------+---------+-------------+------------+------------------
     SORA             | -1.28155 | 1.28155 |     0.90000 |         61 |              152
-    Double-loop RIA  | -1.28155 | 1.28155 |     0.90000 |         53 |             4223
+    Double-loop RIA  | -1.28155 | 1.28155 |     0.90000 |         53 |             4216
     Double-loop PMA  | -1.28155 | 1.28155 |     0.90000 |         53 |              249
 
 
@@ -216,10 +216,10 @@ the standard normal distribution, and the exact probability at a design x is
     Probability error        : 8.774944710854271e-07
 
     Algorithm                : Double-loop RIA
-    Design error             : 2.1920928849894494e-08
-    Objective error          : 5.618560194875499e-08
-    True probability         : 0.9000000038470863
-    Probability error        : 3.847086316177695e-09
+    Design error             : 9.99999993922529e-09
+    Objective error          : 2.5631031297379536e-08
+    True probability         : 0.9000000017549833
+    Probability error        : 1.7549832698193768e-09
 
     Algorithm                : Double-loop PMA
     Design error             : 0.0

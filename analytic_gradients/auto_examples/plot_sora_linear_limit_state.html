@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SORA on a linear limit state &#8212; OTRobOpt 0.18 documentation</title>
+    <title>SORA on a linear limit state &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-    <script src="../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="plot_example1.html" title="Robust optimization with a quadratic cost and a joint chance constraint"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SORA on a linear limit state</a></li> 
       </ul>
@@ -142,7 +142,7 @@ respect to the analytic solution.</p>
 </span><span class="kn">import</span><span class="w"> </span><span class="nn">otrobopt</span><span class="w">
 </span></pre></div></div>
 <p>Define the objective and the limit state.  Both are wrapped in
-<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a> objects with the cache disabled, so that
+<a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a> objects with the cache disabled, so that
 the final counts report the actual number of evaluations.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><span class="n">objective</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><span class="n">ot</span><span class="o">.</span><span class="n">MemoizeFunction</span></a><span class="p">(</span><a class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.SymbolicFunction.html#openturns.SymbolicFunction" title="openturns.SymbolicFunction"><span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span></a><span class="p">(</span><span class="p">[</span><span class="s2">&quot;</span><span class="s2">x</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;</span><span class="s2">x^2</span><span class="s2">&quot;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-method reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.MemoizeFunction.html#openturns.MemoizeFunction.disableCache" title="openturns.MemoizeFunction.disableCache"><span class="n">objective</span><span class="o">.</span><span class="n">disableCache</span></a><span class="p">(</span><span class="p">)</span><span class="w">
@@ -179,8 +179,8 @@ not require the limit-state gradient.</p>
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Optimal design           : -1.2815465655446003
 Target reliability index : 1.2815515655446004
-Reliability index        : 1.2815465436236715
-Approximate probability  : 0.8999991186584178
+Reliability index        : 1.2815465555446004
+Approximate probability  : 0.8999991207505345
 Physical shift           : [5e-06]
 Objective evaluations    : 61
 Limit-state evaluations  : 152
@@ -203,7 +203,7 @@ safe probability are known analytically.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Ground truth design      : -1.2815515655446004
 Design error             : 5.000000000032756e-06
 True probability         : 0.8999991225055289
-Probability error        : 3.847111185173446e-09
+Probability error        : 1.7549944830719255e-09
 Objective ground truth   : 1.642374415149816
 Objective error          : 1.2815490655571082e-05
 </pre></div>
@@ -260,7 +260,7 @@ SORA solution, which coincides with the target quantile of the distribution.</p>
         <li class="right" >
           <a href="plot_example1.html" title="Robust optimization with a quadratic cost and a joint chance constraint"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SORA on a linear limit state</a></li> 
       </ul>

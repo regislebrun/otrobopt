@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Canonicalizing a robust problem with an optimized Uniform bound &#8212; OTRobOpt 0.18 documentation</title>
+    <title>Canonicalizing a robust problem with an optimized Uniform bound &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-    <script src="../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="plot_canonical_correlated_normal.html" title="Canonicalizing a robust problem over a correlated normal distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Canonicalizing a robust problem with an optimized Uniform bound</a></li> 
       </ul>
@@ -201,7 +201,7 @@ optimization.</p>
 </span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Original design dimension       :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblem.html#otrobopt.RobustOptimizationProblem.getDimension" title="otrobopt.RobustOptimizationProblem.getDimension"><span class="n">problem</span><span class="o">.</span><span class="n">getDimension</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Canonical dimension             :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblem.html#otrobopt.RobustOptimizationProblem.getDimension" title="otrobopt.RobustOptimizationProblem.getDimension"><span class="n">canonicalProblem</span><span class="o">.</span><span class="n">getDimension</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
-</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Active parameter indices        :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblemCanonicalizer.html#otrobopt.RobustOptimizationProblemCanonicalizer.getActiveParameter" title="otrobopt.RobustOptimizationProblemCanonicalizer.getActiveParameter"><span class="n">canonicalizer</span><span class="o">.</span><span class="n">getActiveParameter</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
+</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Active parameter indices        :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblemCanonicalizer.html#otrobopt.RobustOptimizationProblemCanonicalizer" title="otrobopt.RobustOptimizationProblemCanonicalizer"><span class="n">canonicalizer</span></a><span class="o">.</span><span class="n">getActiveParameter</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Standard reference space        :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblemCanonicalizer.html#otrobopt.RobustOptimizationProblemCanonicalizer.usesStandardSpace" title="otrobopt.RobustOptimizationProblemCanonicalizer.usesStandardSpace"><span class="n">canonicalizer</span><span class="o">.</span><span class="n">usesStandardSpace</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Reference distribution          :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-otrobopt sphx-glr-backref-type-py-method reference internal" href="../user_manual/_generated/otrobopt.RobustOptimizationProblemCanonicalizer.html#otrobopt.RobustOptimizationProblemCanonicalizer.getReferenceDistribution" title="otrobopt.RobustOptimizationProblemCanonicalizer.getReferenceDistribution"><span class="n">canonicalizer</span><span class="o">.</span><span class="n">getReferenceDistribution</span></a><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Canonical starting point        :</span><span class="s2">&quot;</span><span class="p">,</span> <a class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="openturns.Point"><span class="n">startingPoint</span></a><span class="p">)</span><span class="w">
@@ -422,7 +422,7 @@ optimum.</p>
         <li class="right" >
           <a href="plot_canonical_correlated_normal.html" title="Canonicalizing a robust problem over a correlated normal distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Canonicalizing a robust problem with an optimized Uniform bound</a></li> 
       </ul>

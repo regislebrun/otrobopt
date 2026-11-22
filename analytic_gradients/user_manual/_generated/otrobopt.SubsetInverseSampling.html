@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SubsetInverseSampling &#8212; OTRobOpt 0.18 documentation</title>
+    <title>SubsetInverseSampling &#8212; OTRobOpt 0.19 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/openturns.css?v=8eaafb59" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-    <script src="../../_static/documentation_options.js?v=8f87a041"></script>
+    <script src="../../_static/documentation_options.js?v=2bff2458"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,7 @@
         <li class="right" >
           <a href="otrobopt.SampleAverageApproximationAlgorithm.html" title="SampleAverageApproximationAlgorithm"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SubsetInverseSampling</a></li> 
       </ul>
@@ -135,7 +135,7 @@ expresses as the classic Monte Carlo c.o.v.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>event</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.RandomVector.html#openturns.RandomVector" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt><dd><p>Event we are computing the probability of. The threshold of the event is not used.</p>
+<dt><strong>event</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.RandomVector.html#openturns.RandomVector" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt><dd><p>Event we are computing the probability of. The threshold of the event is not used.</p>
 </dd>
 <dt><strong>targetProbability</strong><span class="classifier">float</span></dt><dd><p>The wanted final probability.</p>
 </dd>
@@ -242,11 +242,17 @@ expresses as the classic Monte Carlo c.o.v.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setConvergenceStrategy" title="otrobopt.SubsetInverseSampling.setConvergenceStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setConvergenceStrategy</span></code></a>(convergenceStrategy)</p></td>
 <td><p>Accessor to the convergence strategy.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setISubset" title="otrobopt.SubsetInverseSampling.setISubset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setISubset</span></code></a>(iSubset)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setEvent" title="otrobopt.SubsetInverseSampling.setEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEvent</span></code></a>(event)</p></td>
+<td><p>Accessor to the event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setISubset" title="otrobopt.SubsetInverseSampling.setISubset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setISubset</span></code></a>(iSubset)</p></td>
 <td><p>Conditional simulation activation accessor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setKeepEventSample" title="otrobopt.SubsetInverseSampling.setKeepEventSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setKeepEventSample</span></code></a>(keepEventSample)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setKeepEventSample" title="otrobopt.SubsetInverseSampling.setKeepEventSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setKeepEventSample</span></code></a>(keepEventSample)</p></td>
 <td><p>Sample storage accessor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setKeepSample" title="otrobopt.SubsetInverseSampling.setKeepSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setKeepSample</span></code></a>(arg2)</p></td>
+<td><p>Accessor to keepSample parameter.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#otrobopt.SubsetInverseSampling.setMaximumCoefficientOfVariation" title="otrobopt.SubsetInverseSampling.setMaximumCoefficientOfVariation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumCoefficientOfVariation</span></code></a>(...)</p></td>
 <td><p>Accessor to the maximum coefficient of variation.</p></td>
@@ -277,10 +283,17 @@ expresses as the classic Monte Carlo c.o.v.</p>
 </tr>
 </tbody>
 </table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>getInputSampleCollection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.EventSimulation.html#openturns.EventSimulation" title="(in OpenTURNS v1.27)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">openturns.EventSimulation</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.EventSimulation.html#openturns.EventSimulation" title="(in OpenTURNS v1.28)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">openturns.EventSimulation</span></code></a></dt><dd></dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -339,7 +352,7 @@ expresses as the classic Monte Carlo c.o.v.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl>
-<dt><strong>graph</strong><span class="classifier">a <a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt><dd><p>probability convergence graph</p>
+<dt><strong>graph</strong><span class="classifier">a <a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt><dd><p>probability convergence graph</p>
 </dd>
 </dl>
 </dd>
@@ -382,7 +395,7 @@ It is set by default to 1.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>coef</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Coefficient of variation at each subset step.</p>
+<dt><strong>coef</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Coefficient of variation at each subset step.</p>
 </dd>
 </dl>
 </dd>
@@ -411,7 +424,7 @@ It is set by default to 1.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>storage_strategy</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt><dd><p>Storage strategy used to store the values of the probability estimator
+<dt><strong>storage_strategy</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt><dd><p>Storage strategy used to store the values of the probability estimator
 and its variance during the simulation algorithm.</p>
 </dd>
 </dl>
@@ -426,7 +439,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>event</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.RandomVector.html#openturns.RandomVector" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt><dd><p>Event we want to evaluate the probability.</p>
+<dt><strong>event</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.RandomVector.html#openturns.RandomVector" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt><dd><p>Event we want to evaluate the probability.</p>
 </dd>
 </dl>
 </dd>
@@ -440,7 +453,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Input sample.</p>
+<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Input sample.</p>
 </dd>
 </dl>
 </dd>
@@ -454,7 +467,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Ouput sample.</p>
+<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Ouput sample.</p>
 </dd>
 </dl>
 </dd>
@@ -468,7 +481,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>gamma</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Autocorrelation values at each subset step.</p>
+<dt><strong>gamma</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Autocorrelation values at each subset step.</p>
 </dd>
 </dl>
 </dd>
@@ -482,7 +495,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Input sample.</p>
+<dt><strong>inputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Input sample.</p>
 </dd>
 </dl>
 </dd>
@@ -580,7 +593,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Output sample.</p>
+<dt><strong>outputSample</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></span></dt><dd><p>Output sample.</p>
 </dd>
 </dl>
 </dd>
@@ -594,7 +607,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>prob</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Probability estimate values.</p>
+<dt><strong>prob</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Probability estimate values.</p>
 </dd>
 </dl>
 </dd>
@@ -622,7 +635,7 @@ and its variance during the simulation algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>results</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.SimulationResult.html#openturns.SimulationResult" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationResult</span></code></a></span></dt><dd><p>Structure containing all the results obtained after simulation and created
+<dt><strong>results</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.SimulationResult.html#openturns.SimulationResult" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationResult</span></code></a></span></dt><dd><p>Structure containing all the results obtained after simulation and created
 by the method <a class="reference internal" href="#otrobopt.SubsetInverseSampling.run" title="otrobopt.SubsetInverseSampling.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p>
 </dd>
 </dl>
@@ -652,7 +665,7 @@ by the method <a class="reference internal" href="#otrobopt.SubsetInverseSamplin
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>coef</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Coefficient of variation at each subset step.</p>
+<dt><strong>coef</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Coefficient of variation at each subset step.</p>
 </dd>
 </dl>
 </dd>
@@ -686,7 +699,7 @@ by the method <a class="reference internal" href="#otrobopt.SubsetInverseSamplin
 <dl class="field-list">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>threshold</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Threshold values.</p>
+<dt><strong>threshold</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Point</span></code></a></span></dt><dd><p>Threshold values.</p>
 </dd>
 </dl>
 </dd>
@@ -748,6 +761,11 @@ of available CPUs to benefit from parallel execution (multithreading, multiproce
 except for the Directional Sampling, where we recommend to set it to 1.
 It also decides the frequency of the stopping criteria and progress callbacks update
 as they are called once the whole block of function evaluations is completed.</p>
+<p>The following <a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.ResourceMap.html#openturns.ResourceMap" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> keys are used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SimulationAlgorithm-DefaultBlockSize</span></code> (<code class="docutils literal notranslate"><span class="pre">UnsignedInteger</span></code>, default: <code class="docutils literal notranslate"><span class="pre">1</span></code>): default block size of the simulation algorithms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimulationAlgorithm-DefaultMaximumTimeDuration</span></code> (<code class="docutils literal notranslate"><span class="pre">Scalar</span></code>, default: <code class="docutils literal notranslate"><span class="pre">-1.0</span></code>): default maximum duration, in seconds, of the simulation algorithms</p></li>
+</ul>
 </dd></dl>
 
 <dl class="py method">
@@ -772,8 +790,22 @@ as they are called once the whole block of function evaluations is completed.</p
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>storage_strategy</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="(in OpenTURNS v1.27)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt><dd><p>Storage strategy used to store the values of the probability estimator
+<dt><strong>storage_strategy</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt><dd><p>Storage strategy used to store the values of the probability estimator
 and its variance during the simulation algorithm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otrobopt.SubsetInverseSampling.setEvent">
+<span class="sig-name descname"><span class="pre">setEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otrobopt.SubsetInverseSampling.setEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to the event.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>event</strong><span class="classifier"><a class="reference external" href="https://openturns.github.io/openturns/latest/user_manual/_generated/openturns.RandomVector.html#openturns.RandomVector" title="(in OpenTURNS v1.28)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt><dd><p>Event we want to evaluate the probability.</p>
 </dd>
 </dl>
 </dd>
@@ -802,6 +834,20 @@ and its variance during the simulation algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>prob</strong><span class="classifier">bool</span></dt><dd><p>Whether to keep the event samples.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otrobopt.SubsetInverseSampling.setKeepSample">
+<span class="sig-name descname"><span class="pre">setKeepSample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otrobopt.SubsetInverseSampling.setKeepSample" title="Link to this definition">¶</a></dt>
+<dd><p>Accessor to keepSample parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>keepSample</strong><span class="classifier">boolean</span></dt><dd><p>Keep sample indicator</p>
 </dd>
 </dl>
 </dd>
@@ -976,7 +1022,7 @@ and its variance during the simulation algorithm.</p>
         <li class="right" >
           <a href="otrobopt.SampleAverageApproximationAlgorithm.html" title="SampleAverageApproximationAlgorithm"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.18 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTRobOpt 0.19 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SubsetInverseSampling</a></li> 
       </ul>
