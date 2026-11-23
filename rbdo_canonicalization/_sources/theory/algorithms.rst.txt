@@ -65,10 +65,10 @@ the origin,
 
 .. math::
 
-    u^\star(x) \in \argmin_{\{u : G(x;u)=0\}} \norm{u},
+    \xi^\star(x) \in \argmin_{\{\xi : G(x;\xi)=0\}} \norm{\xi},
 
 and the signed reliability index is
-:math:`\beta(x)=\operatorname{sign}(G(x;0))\,\norm{u^\star(x)}`.  This
+:math:`\beta(x)=\operatorname{sign}(G(x;0))\,\norm{\xi^\star(x)}`.  This
 formulation is the common language of the double-loop, SORA and single-loop
 methods; they differ in how they solve or avoid the inner problem.
 
@@ -95,9 +95,9 @@ distribution.  It does not hold for elliptical distributions: their
 canonical standard space is the same-kind spherical space obtained by the
 generalized Nataf transformation [Lebrun2009b]_.  For
 :math:`\Theta \sim \mathrm{Student}(\nu,\mu,\sigma,R)`, for instance, the
-transformation is the affine map :math:`\theta = \mu + \sigma L u` with
-:math:`L L^\top = R`, and :math:`U \sim \mathrm{Student}(\nu,0,I)`, whose
-density depends on :math:`\norm{u}` only.  A standard normal space can still
+transformation is the affine map :math:`\theta = \mu + \sigma L \xi` with
+:math:`L L^\top = R`, and :math:`\Xi \sim \mathrm{Student}(\nu,0,I)`, whose
+density depends on :math:`\norm{\xi}` only.  A standard normal space can still
 be reached through a Rosenblatt map, but that map depends on the ordering of
 the components, and the image of the design point is no longer the most
 probable failure point of the original model.
@@ -117,13 +117,13 @@ of that standard distribution, obtained as
 :meth:`~openturns.Distribution.getStandardDistribution` followed by
 :meth:`~openturns.Distribution.getMarginal`.
 
-In a spherically symmetric standard space, the projection of :math:`U` on any
+In a spherically symmetric standard space, the projection of :math:`\Xi` on any
 unit direction has the distribution of a marginal.  Hence, for any unit
 vector :math:`a`,
 
 .. math::
 
-    \Prob{a^\top U \ge \beta} = 1 - F_{\mathrm{std}}(\beta)
+    \Prob{a^\top \Xi \ge \beta} = 1 - F_{\mathrm{std}}(\beta)
                              = F_{\mathrm{std}}(-\beta),
 
 where :math:`F_{\mathrm{std}}` is any one-dimensional marginal of the
@@ -162,7 +162,7 @@ generalized counterparts is summarized below.
       - Same-kind standard space
     * - Transform
       - affine or Rosenblatt map to :math:`\cN(0,I)`
-      - generalized Nataf map to :math:`U`
+      - generalized Nataf map to :math:`\Xi`
     * - Target index
       - :math:`\beta_t=\Phi^{-1}(p_s)`
       - :math:`\beta_t=F_{\mathrm{std}}^{-1}(p_s)`
@@ -256,10 +256,10 @@ point
 
 .. math::
 
-    u^\star(x) \in \argmin_{\{u : s(x;u)=0\}} \norm{u},
+    \xi^\star(x) \in \argmin_{\{\xi : s(x;\xi)=0\}} \norm{\xi},
 
 and the signed reliability index is
-:math:`\beta(x)=\operatorname{sign}(s(x;0))\,\norm{u^\star(x)}`.  A negative
+:math:`\beta(x)=\operatorname{sign}(s(x;0))\,\norm{\xi^\star(x)}`.  A negative
 index means that the origin of the standard space already belongs to the
 failure domain.  The outer problem is
 
@@ -272,14 +272,14 @@ scalarized limit state on the target sphere,
 
 .. math::
 
-    u^\star(x) \in \argmin_{\{u : \norm{u}=\beta_t\}} s(x;u),
+    \xi^\star(x) \in \argmin_{\{\xi : \norm{\xi}=\beta_t\}} s(x;\xi),
 
-and the outer constraint is :math:`s(x;u^\star(x)) \ge 0`.  The outer
+and the outer constraint is :math:`s(x;\xi^\star(x)) \ge 0`.  The outer
 constraint reported by the algorithm is the performance measure at that
 point.  It requires the origin of the standard space to belong to the safe
 domain: when :math:`s(x;0) < 0` the failure domain contains the centre of
 the target sphere, and no value on the sphere certifies safety.  In that case
-the algorithm reports :math:`\min(s(x;u^\star(x)), s(x;0))`, which is
+the algorithm reports :math:`\min(s(x;\xi^\star(x)), s(x;0))`, which is
 negative, so that the outer loop rejects the design.  Both inner problems are
 solved with the configured inner solver, by default
 :class:`~openturns.Cobyla`, because the min-scalarization of a vector limit
@@ -332,7 +332,7 @@ the current design and let
 
 .. math::
 
-    \theta^{*(k)} = T\bigl(u^{*(k)}\bigr)
+    \theta^{*(k)} = T\bigl(\xi^{*(k)}\bigr)
 
 be the physical image of the target point found by a performance-measure
 analysis at :math:`x^{(k)}`.  The physical shift is
@@ -405,7 +405,7 @@ The Bonferroni mode is more robust but conservative, and it requires
          \sigma\min_j g_j\bigl(x;x^{(k)}-d^{(k)}\bigr)\ge 0\\
        \qquad \text{reliability analysis at } x^{(k+1)}
          \text{ with target } p_s\\
-       \qquad d^{(k+1)} = x^{(k+1)} - T\bigl(u^{*(k+1)}\bigr)\\
+       \qquad d^{(k+1)} = x^{(k+1)} - T\bigl(\xi^{*(k+1)}\bigr)\\
        \textbf{until } \norm{x^{(k+1)}-x^{(k)}} \le \varepsilon_x
          \text{ and } \norm{d^{(k+1)}-d^{(k)}} \le \varepsilon_d
        \end{array}
